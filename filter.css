@@ -13,7 +13,7 @@
     text-align: left;
     border: none;
     outline: none;
-    transition: 0.4s;
+    transition: 0.6s;
     box-shadow: 0px 5px 11px  #cccccc;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    content: '\002B'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
     color: white;
     float: right;
@@ -41,5 +41,5 @@
 }
 
 .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    content: "\2212"; /* Unicode character for "minus" sign (-) */
 }
