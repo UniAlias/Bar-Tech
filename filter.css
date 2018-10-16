@@ -24,12 +24,13 @@
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-    padding: 0 18px;
+    /* padding: 0px 18px; */
     background-color: white;
     /* display: none; */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+
 }
 
 .accordion:after {
@@ -42,4 +43,20 @@
 
 .active:after {
     content: "\2212"; /* Unicode character for "minus" sign (-) */
+}
+
+/* ===================================Form style================================*/
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    padding: 12px 10px 12px 10px;
+}
+
+.filterForm{
+  padding: 15px;
 }
