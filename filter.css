@@ -1,7 +1,12 @@
 /* Style the buttons that are used to open and close the accordion panel */
+
+#filterAccordion{
+  width:500px;
+  box-shadow: 0px 5px 11px  #cccccc;
+}
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background-color:  #007399;
+    color: white;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -9,17 +14,32 @@
     border: none;
     outline: none;
     transition: 0.4s;
+    box-shadow: 0px 5px 11px  #cccccc;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
-    background-color: #ccc;
+    background-color: #0086b3;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
     padding: 0 18px;
     background-color: white;
-    display: none;
+    /* display: none; */
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
