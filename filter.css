@@ -2,7 +2,7 @@
 
 #filterAccordion{
   width:500px;
-  box-shadow: 0px 5px 11px  #cccccc;
+  box-shadow: 0px 5px 11px #bfbfbf;
 }
 .accordion {
     background-color:  #007399;
@@ -14,7 +14,7 @@
     border: none;
     outline: none;
     transition: 0.6s;
-    box-shadow: 0px 5px 11px  #cccccc;
+    box-shadow: 0px 5px 11px  #bfbfbf;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -49,12 +49,33 @@
 input[type=text] {
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 12px;
     background-color: white;
     background-position: 10px 10px;
-    padding: 12px 10px 12px 10px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 5px;
+    transition: all 0.2s;
+}
+
+input[type=submit]{
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    margin-bottom: 15px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    transition: all 0.2s;
+    width: 100px;
+}
+
+input[type=submit]:hover {
+  box-shadow: 0px 5px 10px  #bfbfbf;
 }
 
 .filterForm{

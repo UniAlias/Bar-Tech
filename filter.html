@@ -16,28 +16,45 @@
       </form>
 
       <form class = "filterForm">
-        
+
       </form>
     </div>
 
     <button class="accordion" >Issue</button>
     <div class="panel">
-      <p>Lorem ipsum...</p>
+      <form class = "filterForm">
+        <input id = "issue_id" type = "text" name = "id" placeholder = "Key ID">
+        <input id = "issue_issueTo" type = "text" name = "issueTo" placeholder = "Issue To...">
+        <input type="submit" value="Issue">
+      </form>
     </div>
 
     <button class="accordion">Return</button>
     <div class="panel">
-      <p>Lorem ipsum...</p>
+      <form class = "filterForm">
+        <input id = "return_id" type = "text" name = "id" placeholder = "Key ID">
+        <input id = "return_issuedTo" type = "text" name = "issuedTo" placeholder = "Issued To...">
+        <input type="submit" value="Return">
+      </form>
     </div>
 
     <button class="accordion">Add</button>
     <div class="panel">
-      <p>Lorem ipsum...</p>
+      <form class = "filterForm">
+        <input id = "add_id" type = "text" name = "id" placeholder = "Key ID">
+        <input id = "add_room" type = "text" name = "room" placeholder = "Lock Location">
+        <input id = "add_type" type = "text" name = "type" placeholder = "Type">
+        <input type="submit" value="Add">
+      </form>
     </div>
 
     <button class="accordion">Remove</button>
     <div class="panel">
-      <p>Lorem ipsum...</p>
+      <form class = "filterForm">
+        <input id = "remove_id" type = "text" name = "id" placeholder = "Key ID">
+        <input id = "remove_copies" type = "text" name = "room" placeholder = "No. To Remove">
+        <input type="submit" value="Remove">
+      </form>
     </div>
   </div>
 </body>
