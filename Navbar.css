@@ -20,3 +20,10 @@
   background-color: #0086b3;
   color: #f2f2f2;
 }
+
+#navbarLogo {
+  width: auto;
+  height: 40px;
+  padding: 5px;
+  padding-bottom: 0px;
+}
