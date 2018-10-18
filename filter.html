@@ -2,12 +2,14 @@
 
 <html>
 <head>
-    <meta charset="utf-8" name="viewport">
+  <meta charset="utf-8" name="viewport">
   <link rel="stylesheet" type="text/css" href="filter.css">
   <script type = "text/javascript" src = "filter.js"></script>
 </head>
 
 <body onload="open()">
+  <content class = "mainBody">
+
   <div id = "filterAccordion">
     <button class="accordion" id = "activeButton">Filter</button>
     <div class="panel" id = "activePanel">
@@ -65,6 +67,42 @@
       </form>
     </div>
   </div>
+<!-- Database Table -->
+  <table class = "keyDatabase">
+    <tr>
+      <th id = "tableID">Key ID</th>
+      <th id = "tableType">Key Type</th>
+      <th id = "tableAllocated">Allocated To</th>
+      <th id = "tableStorage">Storage</th>
+      <th id = "tableNumber">No. of Available Keys</th>
+    </tr>
+    <tr>
+      <td>k45</td>
+      <td>Master</td>
+      <td>Mr. Person</td>
+      <td>cabinet</td>
+      <td>3</td>
+    </tr>
+
+    <tr>
+      <td>k45</td>
+      <td>Master</td>
+      <td>Mr. Person</td>
+      <td>cabinet</td>
+      <td>3</td>
+    </tr>
+
+    <tr>
+      <td>k45</td>
+      <td>Master</td>
+      <td>Mr. Person</td>
+      <td>cabinet</td>
+      <td>3</td>
+    </tr>
+
+  </table>
+
+</content>
 </body>
 
 </html>
