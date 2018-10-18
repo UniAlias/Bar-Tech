@@ -92,3 +92,9 @@ input[type=submit]:hover {
 .filterForm{
   padding: 15px;
 }
+
+
+/*================================BODY CSS==============================*/
+#bodyCSS {
+  margin: 0px;
+}

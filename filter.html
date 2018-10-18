@@ -4,10 +4,17 @@
 <head>
     <meta charset="utf-8" name="viewport">
   <link rel="stylesheet" type="text/css" href="filter.css">
+  <link rel="stylesheet" type="text/css" href="Navbar.css">
   <script type = "text/javascript" src = "filter.js"></script>
 </head>
 
-<body onload="open()">
+<body onload="open()" id="bodyCSS">
+  <div class="topnav">
+    <a href="#Login/Logout">Login/Logout</a>
+    <a href="#Admin">Admin</a>
+    <a href="#Account">Account</a>
+    <a href="#Home">Home</a>
+  </div>
   <div id = "filterAccordion">
     <button class="accordion" id = "activeButton">Filter</button>
     <div class="panel" id = "activePanel">
