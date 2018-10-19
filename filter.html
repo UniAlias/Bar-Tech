@@ -23,7 +23,7 @@
     <button class="accordion" id = "activeButton">Filter</button>
     <div class="panel" id = "activePanel">
       <form class = "filterForm">
-        <input id = "filter_search" type="text" name="search" placeholder="Search..">
+        <input id = "filter_search" onkeyup = "searchDatabase()" type="text" name="search" placeholder="Search..">
       </form>
 
       <form class = "filterForm">
@@ -77,7 +77,7 @@
     </div>
   </div>
 <!-- Database Table -->
-  <table class = "keyDatabase">
+  <table class = "keyDatabase" id = "keyDatabase">
     <tr>
       <th id = "tableID">Key ID</th>
       <th id = "tableType">Key Type</th>
@@ -94,7 +94,7 @@
     </tr>
 
     <tr>
-      <td>k45</td>
+      <td>k212</td>
       <td>Master</td>
       <td>Mr. Person</td>
       <td>cabinet</td>
@@ -102,7 +102,7 @@
     </tr>
 
     <tr>
-      <td>k45</td>
+      <td>k627364</td>
       <td>Master</td>
       <td>Mr. Person</td>
       <td>cabinet</td>
