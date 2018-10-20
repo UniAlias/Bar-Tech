@@ -1,0 +1,73 @@
+/*Get the body touching the edges of the screen*/
+#accountBody {
+  margin: 0px;
+}
+
+.mainContentHolder {
+  height: 500px;
+  width: 80%;
+  margin: auto;
+}
+
+.mainContent {
+  margin: 150px;
+  background-color: #f2f2f2;
+}
+
+.mainContentHolder a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  font-size: 18px;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: tahoma;
+}
+
+.linkHolder {
+  float: left;
+  background: white;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.linkHolder button {
+  width: 100%;
+  background-color: #007399;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #f2f2f2;
+  font-size: 18px;
+}
+
+.linkHolder button:hover {
+  background-color: #0086b3;
+  color: #f2f2f2;
+}
+
+#pageHolder {
+  background-color: #cccccc;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.accountWelcome {
+  padding-top: 50px;
+  padding-left: 50px;
+  height: auto;
+  display: inline-block;
+}
+
+.accountWelcome h1 {
+  display: inline-block;
+  margin-top: 43px;
+  margin-bottom: 0%;
+}
+
+#accountPicture {
+  width: auto;
+  height: 80px;
+  float: left;
+}
