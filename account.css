@@ -71,3 +71,22 @@
   height: 80px;
   float: left;
 }
+
+.changeUsername {
+  height: auto;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  vertical-align: center;
+}
+
+.changeUsername button {
+  width: auto;
+  background-color: #007399;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #f2f2f2;
+  font-size: 15px;
+}

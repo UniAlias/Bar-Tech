@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="Navbar.css">
     <link rel="stylesheet" type="text/css" href="account.css">
+    <script type = "text/javascript" src = "account.js"></script>
     <title>Account Page</title>
   </head>
   <body id="accountBody">
@@ -11,19 +12,30 @@
       <img src="images/logo_white_ma8l4a.png" id="navbarLogo"/>
       <a href="#Login/Logout">Logout</a>
       <a href="#Admin">Admin</a>
-      <a href="#Account">Account</a>
-      <a href="#Home">Home</a>
+      <a href="account.html">Account</a>
+      <a href="filter.html">Home</a>
     </div>
 
     <div class="mainContentHolder">
         <div class="linkHolder">
-          <button>Username</button>
-          <button>Password</button>
+          <button onclick=showUsername() id="UsernameButton">Username</button>
+          <button onclick=showPassword() id="PasswordButton">Password</button>
         </div>
         <div id="pageHolder">
           <div class="accountWelcome">
             <img src="images/logo_white_ma8l4a.png" id="accountPicture"/>
             <h1>Account Name</h1>
+          </div>
+          <br>
+          <div class="changeUsername">
+            <h3>Username Change</h3>
+            <form action="/account_page.js">
+              New Username:<br>
+              <input type="text" name="Username" placeholder="Username"><br>
+              Confirm Username:<br>
+              <input type="text" name="confirmedUsername" placeholder="Username"><br><br>
+              <button type="submit">Change Username</button>
+            </form>
           </div>
         </div>
     </div>
