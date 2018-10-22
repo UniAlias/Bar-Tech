@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Navbar.css">
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <script type="text/javascript" src = "changeTab.js" ></script>
+    <title>Account Settings</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="topnav">
+        <img src="images/logo_white_ma8l4a.png" id="navbarLogo"/>
+        <a href="#Login/Logout">Logout</a>
+        <a href="#Admin">Admin</a>
+        <a href="account.html">Account</a>
+        <a href="filter.html">Home</a>
+      </div>
+    <header>
+
+    <content class = "mainContent">
+
+      <div id "divider"></div>
+
+      <div class="tab">
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'AddUser')">Add User</button>
+
+        <button class="tablinks" onclick="openTab(event, 'RemoveUser')">Remove User</button>
+        <button class="tablinks" onclick="openTab(event, 'UpdateRights')">Update Rights</button>
+      </div>
+
+      <div id="AddUser" class="tabcontent">
+        <form class = "adminForm">
+          <h3>Add User</h3>
+          <h5>Complete the form to add a user</h5>
+
+          <input id = "add_username" type = "text" name = "id" placeholder = "Username">
+
+          <input id = "add_password" type = "password" name = "issuedTo" placeholder = "Password">
+
+          <input id = "add_conPassword" type = "password" name = "issuedTo" placeholder = "Confirm Password">
+
+          <h5>Select the access rights for the user:</h5>
+
+          <select id = "select">
+            <option value="view">View Only</option>
+            <option value="normal">Normal Access</option>
+            <option value="admin">Admin Access</option>
+          </select>
+
+          <input type="submit" value="Add User">
+        </form>
+      </div>
+
+      <div id="RemoveUser" class="tabcontent">
+        <form class = "adminForm">
+          <h3>Remove User</h3>
+          <h5>Select a user to be removed</h5>
+
+          <select id = "select">
+            <option value="user">Mark</option>
+            <option value="user">John</option>
+            <option value="user">Bill</option>
+          </select>
+
+          <div id = "check">
+            <label for = "remove_confirm">I confirm that I wish permanently remove this user and their access to this system.</label>
+            <input id = "remove_confirm" type = "checkbox" value = "confirm">
+          </div>
+
+          <input type="submit" value="Remove User">
+        </form>
+      </div>
+
+      <div id="UpdateRights" class="tabcontent">
+        <form class = "adminForm">
+          <h3>Update User Rights</h3>
+          <h5>Select a user to update their access privileges</h5>
+
+          <select id = "select">
+            <option value="user">Mark</option>
+            <option value="user">John</option>
+            <option value="user">Bill</option>
+          </select>
+
+          <h5>Current Access Privileges: </h5>
+
+          <h5>Select new access privileges:</h5>
+
+          <select id = "select">
+            <option value="view">View Only</option>
+            <option value="normal">Normal Access</option>
+            <option value="admin">Admin Access</option>
+          </select>
+
+
+
+          <div id = "check">
+            <label for = "remove_confirm">I confirm that I wish to update the selected users access rights.</label>
+            <input id = "remove_confirm" type = "checkbox" value = "confirm">
+          </div>
+
+          <input type="submit" value="Remove User">
+        </form>
+      </div>
+      </div>
+
+      <script>document.getElementById("defaultOpen").click();</script>
+
+    </content>
+
+
+  </body>
+
+</html>
