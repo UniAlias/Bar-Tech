@@ -111,3 +111,13 @@ h5{
 .adminForm{
   padding: 25px;
 }
+
+
+/* ==========================Account Page CSS =====================*/
+#usernameChange {
+  padding: 25px;
+}
+
+#passwordChange {
+  padding: 25px;
+}

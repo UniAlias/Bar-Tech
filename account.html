@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="Navbar.css">
-    <link rel="stylesheet" type="text/css" href="account.css">
-    <script type = "text/javascript" src = "account.js"></script>
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <script type="text/javascript" src = "changeTab.js" ></script>
     <title>Account Page</title>
   </head>
   <body id="accountBody">
@@ -16,29 +16,73 @@
       <a href="filter.html">Home</a>
     </div>
 
-    <div class="mainContentHolder">
-        <div class="linkHolder">
-          <button onclick=showUsername() id="UsernameButton">Username</button>
-          <button onclick=showPassword() id="PasswordButton">Password</button>
-        </div>
-        <div id="pageHolder">
-          <div class="accountWelcome">
-            <img src="images/logo_white_ma8l4a.png" id="accountPicture"/>
-            <h1>Account Name</h1>
+    <content class = "mainContent">
+
+      <div id "divider"></div>
+
+      <div class="tab">
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'AddUser')">Username</button>
+        <button class="tablinks" onclick="openTab(event, 'RemoveUser')">Password</button>
+        <!-- Not needed at the moment -->
+        <!-- <button class="tablinks" onclick="openTab(event, 'UpdateRights')">Update Rights</button> -->
+      </div>
+
+      <div id="AddUser" class="tabcontent">
+        <form action="/account.js" id="usernameChange">
+              <h5>New Username:</h5>
+              <input type="text" name="Username" placeholder="Username">
+              <h5>Confirm Username:</h5>
+              <input type="text" name="confirmedUsername" placeholder="Username">
+              <input type="submit" value="Change Username">
+        </form>
+      </div>
+
+      <div id="RemoveUser" class="tabcontent">
+        <form action='/account_page.js' id="passwordChange">
+          <h5>New Password:</h5>
+          <input type='text' name='password' placeholder='Password'><br>
+          <h5>Confirm Password:</h5>
+          <input type='text' name='confirmedPassword' placeholder='Password'>
+          <input type='submit' value="Change Password">
+        </form>
+      </div>
+
+      <div id="UpdateRights" class="tabcontent">
+        <form class = "adminForm">
+          <h3>Update User Rights</h3>
+          <h5>Select a user to update their access privileges</h5>
+
+          <select id = "select">
+            <option value="user">Mark</option>
+            <option value="user">John</option>
+            <option value="user">Bill</option>
+          </select>
+
+          <h5>Current Access Privileges: </h5>
+
+          <h5>Select new access privileges:</h5>
+
+          <select id = "select">
+            <option value="view">View Only</option>
+            <option value="normal">Normal Access</option>
+            <option value="admin">Admin Access</option>
+          </select>
+
+
+
+          <div id = "check">
+            <label for = "remove_confirm">I confirm that I wish to update the selected users access rights.</label>
+            <input id = "remove_confirm" type = "checkbox" value = "confirm">
           </div>
-          <br>
-          <div class="changeUsername">
-            <h3>Username Change</h3>
-            <form action="/account_page.js">
-              New Username:<br>
-              <input type="text" name="Username" placeholder="Username"><br>
-              Confirm Username:<br>
-              <input type="text" name="confirmedUsername" placeholder="Username"><br><br>
-              <button type="submit">Change Username</button>
-            </form>
-          </div>
-        </div>
-    </div>
+
+          <input type="submit" value="Remove User">
+        </form>
+      </div>
+      </div>
+
+      <script>document.getElementById("defaultOpen").click();</script>
+
+    </content>
 
   </body>
 </html>
