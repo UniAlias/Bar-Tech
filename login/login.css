@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-
+body {
+  margin: 0px;
+}
 
 .login-page{
   background-color: white;
@@ -68,4 +70,17 @@ font-family: verdana;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+#loginButton {
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    transition: all 0.2s;
+    width: 50%;
 }
