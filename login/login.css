@@ -30,6 +30,7 @@ box-shadow: 0px 5px 11px  #bfbfbf;
   display: flex;
   flex-flow: nowrap;
   margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 
@@ -38,7 +39,7 @@ width:90%;
 text-align: right;
 font-size: 50px;
 color:white;
-font-family: "Roboto", sans-serif;
+font-family: verdana;
 }
 
 .imageformat{
