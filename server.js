@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+app.use(express.static('public'))
+
 //set the view engine to ejs
 app.set('view engine', 'ejs');
 
