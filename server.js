@@ -80,6 +80,6 @@ app.post('/dologin', function(req, res) {
     if (err) throw err;
     if (!result){res.redirect('/login');return}
     if(result.password == pword){req.session = true; req.session.currentusername = result.username;res.redirect('/filter')}
-    else {res.redirect('/login')}
+    else {res.redirect('/')}
   });
 });
