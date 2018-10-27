@@ -79,7 +79,7 @@ app.post('/dologin', function(req, res) {
   db.collection('users').findOne({"username":uname}, function(err, result) {
     if (err) throw err;
     if (!result){res.redirect('/login');return}
-    if(result.password == pword){req.session = true; req.session.currentusername = result.username;res.redirect('/filter')}
+    if(result.password == pword){req.session = true;res.redirect('/filter')}
     else {res.redirect('/')}
   });
 });
