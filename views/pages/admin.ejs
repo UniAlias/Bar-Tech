@@ -25,22 +25,22 @@
       </div>
 
       <div id="AddUser" class="tabcontent">
-        <form class = "adminForm">
+        <form class = "adminForm" action = "/adduser" method = "POST">
           <h3>Add User</h3>
           <h5>Complete the form to add a user</h5>
 
-          <input id = "add_username" type = "text" name = "id" placeholder = "Username">
+          <input id = "add_username" type = "text" name = "name" placeholder = "Username">
 
-          <input id = "add_password" type = "password" name = "issuedTo" placeholder = "Password">
+          <input id = "add_password" type = "password" name = "psw" placeholder = "Password">
 
-          <input id = "add_conPassword" type = "password" name = "issuedTo" placeholder = "Confirm Password">
+          <input id = "add_conPassword" type = "password" name = "psw_con" placeholder = "Confirm Password">
 
           <h5>Select the access rights for the user:</h5>
 
           <select id = "select">
-            <option value="view">View Only</option>
-            <option value="normal">Normal Access</option>
-            <option value="admin">Admin Access</option>
+            <option value="1">View Only</option>
+            <option value="2">Normal Access</option>
+            <option value="3">Admin Access</option>
           </select>
 
           <input type="submit" value="Add User">
