@@ -70,8 +70,8 @@ MongoClient.connect(url, function(err, db) {
 //================RENDER PAGES===============
 //filter Page
 app.get('/filter', function(req, res) {
-  var keys = db.collection("keys").find();
-  console.log(keys);
+  var keys = db.collection("keys").find().toArray();
+  // console.log(keys);
   res.render('pages/filter', {
     keys: keys
   });
