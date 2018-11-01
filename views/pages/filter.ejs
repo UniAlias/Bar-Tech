@@ -29,7 +29,7 @@
     <button class="accordion" >Issue</button>
     <div class="panel">
       <form class = "filterForm">
-        
+
         <!-- <input id = "issue_id" type = "text" name = "id" placeholder = "Key ID"> -->
 
         <div class = "inline">
@@ -40,7 +40,9 @@
           </select>
           <select>
               <% keys.forEach(function(key) { %>
+                <% if key.allocated == "Available" { %>
                 <option value = key.id><%= key.id %></option>
+                <% }); %>
               <% }); %>
           </select>
           <!-- <input id = "issue_issueTo" class = "inline" type = "text" name = "issueTo" placeholder = "Issue To..."> -->
@@ -52,9 +54,14 @@
     <button class="accordion">Return</button>
     <div class="panel">
       <form class = "filterForm">
-        <input id = "return_id" type = "text" name = "id" placeholder = "Key ID">
+        <!-- <input id = "return_id" type = "text" name = "id" placeholder = "Key ID"> -->
         <div class = "inline">
-          <input id = "return_issuedTo" type = "text" name = "issuedTo" placeholder = "Issued To...">
+          <!-- <input id = "return_issuedTo" type = "text" name = "issuedTo" placeholder = "Issued To..."> -->
+          <select>
+              <% keys.forEach(function(key) { %>
+                <option value = key.id><%= key.id %></option>
+              <% }); %>
+          </select>
           <input type="submit" value="Return">
         </div>
       </form>
