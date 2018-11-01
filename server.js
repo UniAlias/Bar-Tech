@@ -32,18 +32,18 @@ MongoClient.connect(url, function(err, db) {
 });
 
 //Inserting Data into the 'users' Collection
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var myobj = [
-    {username: 'shona110', password: 'keymaster123', clearance: '3'},
-    {username: 'admin', password: 'uniAdmin', clearance: '3'}
-  ];
-  db.collection("users").insertMany(myobj, function(err, res) {
-    if (err) throw err;
-    console.log("Number of users inserted: " + res.insertedCount);
-    db.close();
-  });
-});
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var myobj = [
+//     {username: 'shona110', password: 'keymaster123', clearance: '3'},
+//     {username: 'admin', password: 'uniAdmin', clearance: '3'}
+//   ];
+//   db.collection("users").insertMany(myobj, function(err, res) {
+//     if (err) throw err;
+//     console.log("Number of users inserted: " + res.insertedCount);
+//     db.close();
+//   });
+// });
 
 
 
