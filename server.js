@@ -199,7 +199,7 @@ app.post('/issue', function(req, res) {
     //db.collection("keys").findOne("id": req.body.keyid, function(err, result) {
       db.collection("keys").update("id": req.body.keyid, {$set:{
         "allocated" : req.body.name
-      }}
+      }});
       res.redirect("/filter");
 });
 
