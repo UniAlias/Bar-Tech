@@ -33,12 +33,12 @@
         <!-- <input id = "issue_id" type = "text" name = "id" placeholder = "Key ID"> -->
 
         <div class = "inline">
-          <select>
+          <select name = "issuekey">
             <% people.forEach(function(peep) { %>
               <option name = "name" value = peep.name><%= peep.name %></option>
             <% }); %>
           </select>
-          <select>
+          <select name="peopleselect">
               <% keys.forEach(function(key) { %>
                 <% if (key.num > 0 ) { %>
                 <option  name = "keyid" value = key.id><%= key.id %></option>

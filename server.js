@@ -197,8 +197,8 @@ app.post('/changepassword', function(req, res) {
 //===========================ISSUE KEY=============================
 app.post('/issue', function(req, res) {
     //db.collection("keys").findOne("id": req.body.keyid, function(err, result) {
-      db.collection("keys").update({"id": req.body.keyid.value}, {$set:{
-        "allocated" : req.body.name.value
+      db.collection("keys").update({"id": req.body.issuekey}, {$set:{
+        "allocated" : req.body.peopleselect
       }});
       res.redirect("/filter");
 });
