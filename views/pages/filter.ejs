@@ -79,57 +79,21 @@
       <th id = "tableType">Key Type</th>
       <th id = "tableAllocated">Allocated To</th>
       <th id = "tableStorage">Storage</th>
+      <th id = "tableLock">Lock Location</th>
       <th id = "tableNumber">No. of Available Keys</th>
     </tr>
     <thead>
     <tbody>
-    <tr>
-      <td>k45</td>
-      <td>Master</td>
-      <td>Bartek</td>
-      <td>cabinet</td>
-      <td>3</td>
-    </tr>
-
-    <tr>
-      <td>k212</td>
-      <td>normal</td>
-      <td>Mr. Person</td>
-      <td>cabinet</td>
-      <td>3</td>
-    </tr>
-
-    <tr>
-      <td>k627364</td>
-      <td>Master</td>
-      <td>John</td>
-      <td>key locker</td>
-      <td>1</td>
-    </tr>
-
-    <tr>
-      <td>k324</td>
-      <td>super master</td>
-      <td>Hagrid</td>
-      <td>key safe</td>
-      <td>1</td>
-    </tr>
-
-    <tr>
-      <td>k666</td>
-      <td>normal</td>
-      <td>Luci</td>
-      <td>cabinet 66</td>
-      <td>1</td>
-    </tr>
-
-    <tr>
-      <td>k75</td>
-      <td>master</td>
-      <td>unassigned</td>
-      <td>cabinet 65</td>
-      <td>2</td>
-    </tr>
+    <% keys.forEach(function(key) { %>
+      <tr>
+        <td><%= key.id %></td>
+        <td><%= key.type %></td>
+        <td><%= key.allocated %></td>
+        <td><%= key.storage %></td>
+        <td><%= key.lock %></td>
+        <td><%= key.num %></td>
+      </tr>
+    <% }); %>
   </tbody>
   </table>
 
