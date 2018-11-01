@@ -63,8 +63,8 @@ MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     console.log("Number of keys inserted: " + res.insertedCount);
     // db.close();
-  }
-}
+  });
+});
 
 
 //================RENDER PAGES===============
