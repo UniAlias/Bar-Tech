@@ -70,11 +70,26 @@ MongoClient.connect(url, function(err, db) {
 //================RENDER PAGES===============
 //filter Page
 app.get('/filter', function(req, res) {
-  var keys = db.collection("keys").find().toArray();
+  db.collection("keys").find().toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+    // var output = "";
+    // for (var i = 0; i < result.length; i++) {
+    //   output += "<tr>"
+    //   output += "<td>" + result[i].id + "</td>"
+    //   output += "<td>" + result[i].type + "</td>"
+    //   output += "<td>" + result[i].allocated + "</td>"
+    //   output += "<td>" + result[i].storage + "</td>"
+    //   output += "<td>" + result[i].lock + "</td>"
+    //   output += "<td>" + result[i].num + "</td>"
+    //   output += "</tr>"
+    // }
+    // res.send(output);
   // console.log(keys);
   res.render('pages/filter', {
-    keys: keys
+    keys: result
   });
+});
 });
 
 //account page
