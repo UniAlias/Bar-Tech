@@ -215,7 +215,19 @@ app.post('/return', function(req, res) {
 
 //==========================ADD KEY==================================
 app.post('/addkey', function(req, res) {
-
+    console.log(JSON.stringify(req.body))
+    var datastore = {
+      "id": req.body.id,
+      "type": req.body.type,
+      "allocated": "Available",
+      "storage": req.body.storage,
+      "lock": req.body.room,
+      "num": req.body.availableKeys
+    };
+    db.collection("keys").save(datastore, function (err, result) {
+      if (err) throw err;
+      res.redirect('/filter');
+    })
 });
 
 //==========================REMOVE KEY=============================
