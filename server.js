@@ -206,7 +206,11 @@ app.post('/issue', function(req, res) {
 
 //==========================RETURN KEY===============================
 app.post('/return', function(req, res) {
-
+    console.log(JSON.stringify(req.body))
+      db.collection("keys").update({"id": req.body.keyreturn}, {$set:{
+        "allocated" : "Available"
+      }});
+      res.redirect("/filter");
 });
 
 //==========================ADD KEY==================================

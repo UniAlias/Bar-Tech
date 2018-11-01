@@ -57,9 +57,9 @@
         <!-- <input id = "return_id" type = "text" name = "id" placeholder = "Key ID"> -->
         <div class = "inline">
           <!-- <input id = "return_issuedTo" type = "text" name = "issuedTo" placeholder = "Issued To..."> -->
-          <select>
+          <select name="keyreturn">
               <% keys.forEach(function(key) { %>
-                <option value = key.id><%= key.id %></option>
+                <option><%= key.id %></option>
               <% }); %>
           </select>
           <input type="submit" value="Return">
