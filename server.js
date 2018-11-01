@@ -84,23 +84,23 @@ app.post('/dologin', function(req, res) {
   });
 });
 
-//add user (admin)
-app.post('/adduser', function(req, res) {
-  //check we are logged in
-  //if(!req.session.loggedin){res.redirect('/');return;}
-
-  //we create the data string from the form components that have been passed in
-
-var datatostore = {
-  {username: req.body.add_username, req.body.add_password, clearance: req.body.value}
-};
-
-
-//once created we just run the data string against the database and all our new data will be saved/
-  db.collection('users').save(datatostore, function(err, result) {
-    if (err) throw err;
-    console.log("User",JSON.stringify(req.body.add_username),"was added to database!");
-    //when complete redirect to the index
-    res.redirect('back')
-  })
-});
+// //add user (admin)
+// app.post('/adduser', function(req, res) {
+//   //check we are logged in
+//   //if(!req.session.loggedin){res.redirect('/');return;}
+//
+//   //we create the data string from the form components that have been passed in
+//
+// var datatostore = {
+//   {username: req.body.add_username, req.body.add_password, clearance: req.body.value}
+// };
+//
+//
+// //once created we just run the data string against the database and all our new data will be saved/
+//   db.collection('users').save(datatostore, function(err, result) {
+//     if (err) throw err;
+//     console.log("User",JSON.stringify(req.body.add_username),"was added to database!");
+//     //when complete redirect to the index
+//     res.redirect('back')
+//   })
+// });
