@@ -34,8 +34,13 @@
               <option value = key.id><%= key.id %></option>
             <% }); %>
         </select>
-        <input id = "issue_id" type = "text" name = "id" placeholder = "Key ID">
+        <!-- <input id = "issue_id" type = "text" name = "id" placeholder = "Key ID"> -->
         <div class = "inline">
+          <select>
+              <% people.forEach(function(peep) { %>
+                <option value = peep.name><%= peep.name %></option>
+              <% }); %>
+          </select>
           <input id = "issue_issueTo" class = "inline" type = "text" name = "issueTo" placeholder = "Issue To...">
           <input type="submit" value="Issue" class = "inline">
         </div>
