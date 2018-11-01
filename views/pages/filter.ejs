@@ -35,13 +35,13 @@
         <div class = "inline">
           <select name = "issuekey">
             <% people.forEach(function(peep) { %>
-              <option name = "name" value = peep.name><%= peep.name %></option>
+              <option name = "name"><%= peep.name %></option>
             <% }); %>
           </select>
           <select name="peopleselect">
               <% keys.forEach(function(key) { %>
                 <% if (key.num > 0 ) { %>
-                <option  name = "keyid" value = key.id><%= key.id %></option>
+                <option  name = "keyid"><%= key.id %></option>
                 <% } %>
               <% }); %>
           </select>
