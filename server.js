@@ -199,6 +199,8 @@ app.post('/issue', function(req, res) {
     //db.collection("keys").findOne("id": req.body.keyid, function(err, result) {
       db.collection("keys").update({"id": req.body.issuekey}, {$set:{
         "allocated" : req.body.peopleselect
+        console.log(req.body.issuekey);
+        console.log(req.body.peopleselect);
       }});
       res.redirect("/filter");
 });
