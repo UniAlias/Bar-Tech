@@ -232,5 +232,7 @@ app.post('/addkey', function(req, res) {
 
 //==========================REMOVE KEY=============================
 app.post('/removekey', function(req, res) {
-
+    console.log(JSON.stringify(req.body))
+    db.collection("keys").remove({"id": req.body.keyselector})
+    res.redirect('/filter');
 });
