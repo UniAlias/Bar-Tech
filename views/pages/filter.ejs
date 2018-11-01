@@ -84,9 +84,16 @@
     <button class="accordion">Remove</button>
     <div class="panel">
       <form class = "filterForm">
-        <input id = "remove_id" type = "text" name = "id" placeholder = "Key ID">
+        <!-- <input id = "remove_id" type = "text" name = "id" placeholder = "Key ID"> -->
         <div class = "inline">
-          <input id = "remove_copies" type = "text" name = "room" placeholder = "No. To Remove">
+          <select>
+              <% keys.forEach(function(key) { %>
+                <% if (key.num > 0 ) { %>
+                <option value = key.id><%= key.id %></option>
+                <% } %>
+              <% }); %>
+          </select>
+          <input id = "remove_copies" type ="number" name = "room" placeholder = "No. To Remove">
           <input type="submit" value="Remove">
         </div>
       </form>
