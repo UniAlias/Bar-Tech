@@ -22,6 +22,7 @@
 
         <button class="tablinks" onclick="openTab(event, 'RemoveUser')">Remove User</button>
         <button class="tablinks" onclick="openTab(event, 'UpdateRights')">Update Rights</button>
+        <button class="tablinks" onclick="openTab(event, 'Addperson')">Add person</button>
       </div>
 
       <div id="AddUser" class="tabcontent">
@@ -51,6 +52,7 @@
         <form class = "adminForm">
           <h3>Remove User</h3>
           <h5>Select a user to be removed</h5>
+
 
           <select id = "select">
             <option value="user">Mark</option>
@@ -96,6 +98,12 @@
           </div>
 
           <input type="submit" value="Remove User">
+        </form>
+      </div>
+      <div id="Addperson" class="tabcontent">
+        <form class="adminForm" action="/addperson" method="POST">
+          <input id = "personName">
+          <input type="submit" value="Add Person">
         </form>
       </div>
       </div>
