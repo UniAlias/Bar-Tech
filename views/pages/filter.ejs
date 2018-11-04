@@ -62,6 +62,11 @@
                 <option><%= key.id %></option>
               <% }); %>
           </select>
+          <select name = "peopleselect">
+            <% people.forEach(function(peep) { %>
+              <option name = "name"><%= peep.name %></option>
+            <% }); %>
+          </select>
           <input type="submit" value="Return">
         </div>
       </form>

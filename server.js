@@ -224,10 +224,11 @@ app.post('/issue', function(req, res) {
 //==========================RETURN KEY===============================
 app.post('/return', function(req, res) {
     console.log(JSON.stringify(req.body))
-      db.collection("keys").update({"id": req.body.keyreturn}, {$set:{
-        "allocated" : "Available"
-      }});
-      res.redirect("/filter");
+    db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
+      db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
+      db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "Storage": result.storage, "lock": result.lock, "num": 1});
+    });
+    res.redirect("/filter");
 });
 
 //==========================ADD KEY==================================
