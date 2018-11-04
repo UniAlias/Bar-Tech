@@ -212,7 +212,7 @@ app.post('/issue', function(req, res) {
           console.log("Error in updating");
         }
       }
-      if else (result.num == 1) {
+      else if (result.num == 1) {
         db.collection("keys").updateOne({$and: [{"id": req.body.issuekey}, {"allocated": "Allocated"}]});
       }
       res.redirect("/filter");
