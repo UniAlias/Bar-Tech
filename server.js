@@ -213,7 +213,7 @@ app.post('/issue', function(req, res) {
         }
       }
       else if (result.num == 1) {
-        db.collection("keys").updateOne({$and: [{"id": req.body.issuekey}, {"allocated": "Allocated"}]});
+        db.collection("keys").updateOne({$and: [{"id": req.body.issuekey}, {"allocated": "Available"}]});
       }
       res.redirect("/filter");
     });
