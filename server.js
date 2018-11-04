@@ -33,6 +33,7 @@ MongoClient.connect(url, function(err, db) {
     console.log("Keys collection created!");
     // db.close();
   });
+  db.createCollection("people")
 });
 
 //Inserting Data into the 'users' Collection
@@ -206,8 +207,9 @@ app.post('/changepassword', function(req, res) {
 //========================PEOPLE ROUTES================================
 //=====================================================================
 app.post('/addperson', function(req, res) {
-  console.log(JSON.stringify(req.body))
+  // console.log(JSON.stringify(req.body))
   db.collection("people").insert({"name": req.body.newName});
+  res.redirect("/admin");
 });
 
 
