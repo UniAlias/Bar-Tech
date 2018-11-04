@@ -131,7 +131,12 @@ app.get('/account', function(req, res) {
 
 //admin page
 app.get('/admin', function(req, res) {
-  res.render('pages/admin');
+  if (req.session.clearance == 3) {
+    res.render('pages/admin');
+  }
+  else if (req.session.clearance != 3) {
+    console.log("You do not have access to this page");
+  }
 });
 
 //login page
