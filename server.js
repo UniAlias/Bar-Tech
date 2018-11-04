@@ -87,6 +87,7 @@ MongoClient.connect(url, function(err, db) {
 //================RENDER PAGES===============
 //filter Page
 app.get('/filter', function(req, res) {
+  if (req.session.loggedin == true) {
   db.collection("keys").find().toArray(function(err, result) {
     db.collection("people").find().toArray(function(err, results) {
 
@@ -112,6 +113,7 @@ app.get('/filter', function(req, res) {
   });
 });
 });
+}
 });
 
 //account page
