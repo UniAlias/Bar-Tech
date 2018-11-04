@@ -206,7 +206,7 @@ app.post('/changepassword', function(req, res) {
 //========================PEOPLE ROUTES================================
 //=====================================================================
 app.post('/addperson', function(req, res) {
-  db.collection("people").insert({"name": req.body.personName});
+  db.collection("people").insert({"name": req.body.newName});
 });
 
 
