@@ -198,10 +198,20 @@ app.post('/changepassword', function(req, res) {
 app.post('/issue', function(req, res) {
     //db.collection("keys").findOne("id": req.body.keyid, function(err, result) {
     console.log(JSON.stringify(req.body))
-      db.collection("keys").update({"id": req.body.issuekey}, {$set:{
-        "allocated" : req.body.peopleselect
-      }});
+      // db.collection("keys").update({"id": req.body.issuekey}, {$set:{
+      //   "allocated" : req.body.peopleselect
+      // }});
+      db.collection("keys").findOne({"id": req.body.issuekey}, function(err, result) {
+        if (err) throw err;
+        db.collection("keys").insert({"id": req.body.issuekey,"type": result.type, "allocated": req.body.peopleselect, "storage": result.storage, "lock": result.lock, "num": result.num});
+        try {
+          db.collection("keys").updateMany({"id": {req.body.issuekey}}, {$set: {"num": {result.num - 1}}});
+        }
+        catch (e) {
+          console.log("Error in updating");
+        }
       res.redirect("/filter");
+    });
 });
 
 //==========================RETURN KEY===============================
