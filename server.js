@@ -207,7 +207,7 @@ app.post('/changepassword', function(req, res) {
 //=====================================================================
 app.post('/addperson', function(req, res) {
   db.collection("people").insert({"name": req.body.personName});
-}
+});
 
 
 
