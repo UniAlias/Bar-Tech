@@ -121,7 +121,12 @@ else if (!req.session.loggedin) {
 
 //account page
 app.get('/account', function(req, res) {
-  res.render('pages/account');
+  if (req.session.loggedin) {
+    res.render('pages/account');
+  }
+  else if (!req.session.loggedin) {
+    res.redirect('/');
+  }
 });
 
 //admin page
@@ -145,7 +150,7 @@ app.post('/dologin', function(req, res) {
   db.collection('users').findOne({"username":uname}, function(err, result) {
     if (err) throw err;
     if (!result){console.log("You are not a user.");res.redirect('/');return}
-    if(result.password == pword){req.session.loggedin = true;res.redirect('/filter')}
+    if(result.password == pword){req.session.loggedin = true;req.session.security = result.clearance;res.redirect('/filter')}
     else {res.redirect('/')}
   });
 });
