@@ -203,6 +203,7 @@ app.post('/issue', function(req, res) {
       // }});
       db.collection("keys").findOne({"id": req.body.issuekey}, function(err, result) {
         if (err) throw err;
+        if (result.num > 1) {
         db.collection("keys").insert({"id": req.body.issuekey,"type": result.type, "allocated": req.body.peopleselect, "storage": result.storage, "lock": result.lock, "num": (result.num - 1)});
         try {
           db.collection("keys").updateMany({"id": req.body.issuekey}, {$set: {"num": (result.num - 1)}});
@@ -210,9 +211,13 @@ app.post('/issue', function(req, res) {
         catch (e) {
           console.log("Error in updating");
         }
+      }
+      if else (result.num == 1) {
+        db.collection("keys").updateOne({$and: [{"id": req.body.issuekey}, {"allocated": "Allocated"}]});
+      }
       res.redirect("/filter");
     });
-});
+
 
 //==========================RETURN KEY===============================
 app.post('/return', function(req, res) {
