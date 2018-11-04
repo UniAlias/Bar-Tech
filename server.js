@@ -114,6 +114,9 @@ app.get('/filter', function(req, res) {
 });
 });
 }
+else if (!req.session.loggedin) {
+  res.redirect('/');
+}
 });
 
 //account page
