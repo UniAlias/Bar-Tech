@@ -11,7 +11,11 @@
 </head>
 
 <body onload="open()" id="bodyCSS">
-  <% include ../partials/navbar %>
+  <% if(req.session.clearance == 3){ %>
+    <% include ../partials/navbar %>
+  <% }else{ %>
+    <% include ../partials/navbarAlt %>
+  <% } %>
   <content class = "mainBody">
 
   <div id = "filterAccordion">
