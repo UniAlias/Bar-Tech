@@ -11,7 +11,7 @@
 </head>
 
 <body onload="open()" id="bodyCSS">
-  <% if(req.session.clearance == 3){ %>
+  <% if(rights == 3){ %>
     <% include ../partials/navbar %>
   <% }else{ %>
     <% include ../partials/navbarAlt %>
