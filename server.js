@@ -36,7 +36,7 @@ MongoClient.connect(url, function(err, db) {
   db.createCollection("people")
 });
 
-Inserting Data into the 'users' Collection
+//Inserting Data into the 'users' Collection
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var myobj = [
