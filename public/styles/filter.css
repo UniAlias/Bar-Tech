@@ -10,6 +10,7 @@
     cursor: pointer;
     padding: 18px;
     width: 100%;
+    height: auto;
     text-align: left;
     border: none;
     outline: none;
