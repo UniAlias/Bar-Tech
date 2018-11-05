@@ -167,6 +167,15 @@ app.post('/dologin', function(req, res) {
   });
 });
 
+//logout post route
+app.get('/logout', function(req, res) {
+  //if(!req.session.loggedin){res.redirect('/filter');return;}
+  console.log(JSON.stringify(req.session.user),"logged out, bye!");
+  req.session.loggedin = false;
+  req.session.destroy();
+  res.redirect('/');
+});
+
 // //add user (admin)
 // app.post('/adduser', function(req, res) {
 //   //check we are logged in
