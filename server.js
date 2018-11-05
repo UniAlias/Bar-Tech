@@ -162,7 +162,7 @@ app.post('/dologin', function(req, res) {
   db.collection('users').findOne({"username":uname}, function(err, result) {
     if (err) throw err;
     if (!result){console.log("You are not a user.");res.redirect('/');return}
-    if(result.password == pword){req.session.loggedin = true;req.session.security = result.clearance;res.redirect('/filter')}
+    if(result.password == pword){req.session.loggedin = true;req.session.user = result.username; req.session.security = result.clearance;res.redirect('/filter')}
     else {res.redirect('/')}
   });
 });
