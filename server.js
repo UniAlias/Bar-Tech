@@ -111,7 +111,7 @@ app.get('/filter', function(req, res) {
   res.render('pages/filter', {
     keys: result,
     people: results,
-    rights: req.session.clearance
+    rights: req.session.security
   });
 });
 });
