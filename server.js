@@ -184,7 +184,14 @@ app.post('/dologin', function(req, res) {
 
 //=================================ADD USER==========================
 app.post('/adduser', function(req, res) {
+  var datastore = [{"username": req.body.name,
+                   "password": req.body.psw,
+                   "clearance": req.body.select}];
 
+  db.collection("users").insert(datastore, function(err, res) {
+    if (err) throw err;
+    console.log(JSON.stringify(datastore));
+    });
 });
 
 
