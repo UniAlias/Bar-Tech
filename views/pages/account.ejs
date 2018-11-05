@@ -15,20 +15,10 @@
       <div id "divider"></div>
 
       <div class="tab">
-        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'AddUser')">Username</button>
-        <button class="tablinks" onclick="openTab(event, 'RemoveUser')">Password</button>
+        <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'RemoveUser')">Change Password</button>
+        <!-- <button class="tablinks" onclick="openTab(event, 'RemoveUser')">Password</button> -->
         <!-- Not needed at the moment -->
         <!-- <button class="tablinks" onclick="openTab(event, 'UpdateRights')">Update Rights</button> -->
-      </div>
-
-      <div id="AddUser" class="tabcontent">
-        <form action="/account.js" id="usernameChange">
-              <h5>New Username:</h5>
-              <input type="text" name="Username" placeholder="Username">
-              <h5>Confirm Username:</h5>
-              <input type="text" name="confirmedUsername" placeholder="Username">
-              <input type="submit" value="Change Username">
-        </form>
       </div>
 
       <div id="RemoveUser" class="tabcontent">
@@ -41,37 +31,6 @@
         </form>
       </div>
 
-      <div id="UpdateRights" class="tabcontent">
-        <form class = "adminForm">
-          <h3>Update User Rights</h3>
-          <h5>Select a user to update their access privileges</h5>
-
-          <select id = "select">
-            <option value="user">Mark</option>
-            <option value="user">John</option>
-            <option value="user">Bill</option>
-          </select>
-
-          <h5>Current Access Privileges: </h5>
-
-          <h5>Select new access privileges:</h5>
-
-          <select id = "select">
-            <option value="view">View Only</option>
-            <option value="normal">Normal Access</option>
-            <option value="admin">Admin Access</option>
-          </select>
-
-
-
-          <div id = "check">
-            <label for = "remove_confirm">I confirm that I wish to update the selected users access rights.</label>
-            <input id = "remove_confirm" type = "checkbox" value = "confirm">
-          </div>
-
-          <input type="submit" value="Remove User">
-        </form>
-      </div>
       </div>
 
       <script>document.getElementById("defaultOpen").click();</script>

@@ -21,8 +21,10 @@
         <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'AddUser')">Add User</button>
 
         <button class="tablinks" onclick="openTab(event, 'RemoveUser')">Remove User</button>
+        <button class="tablinks" onclick="openTab(event, 'ChangeName')">Change Username</button>
         <button class="tablinks" onclick="openTab(event, 'UpdateRights')">Update Rights</button>
-        <button class="tablinks" onclick="openTab(event, 'Addperson')">Add person</button>
+        <button class="tablinks" onclick="openTab(event, 'Addperson')">Add People</button>
+
       </div>
 
       <div id="AddUser" class="tabcontent">
@@ -100,9 +102,34 @@
           <input type="submit" value="Update">
         </form>
       </div>
-      
+
+      <div id="ChangeName" class="tabcontent">
+        <form action="/changeusername" id="usernameChange">
+
+          <h3>Change Username</h3>
+          <h5>Select a user to change their username</h5>
+
+          <select id = "select" name = "selectUser">
+            <% users.forEach(function(user) { %>
+              <option><%= user.username %></option>
+            <% }); %>
+          </select>
+
+          <h5>New Username:</h5>
+          <input type="text" name="Username" placeholder="Username">
+
+          <h5>Confirm Username:</h5>
+          <input type="text" name="confirmedUsername" placeholder="Username">
+          <input type="submit" value="Change Username">
+        </form>
+      </div>
+
       <div id="Addperson" class="tabcontent">
         <form class="adminForm" action="/addperson" method="POST">
+
+          <h3>Add Person</h3>
+          <h5>Add a member of staff, to which you can issue keys</h5>
+
           <h3>New Person Name:</h3>
           <input id = "personName" name="newName">
           <input type="submit" value="Add Person">

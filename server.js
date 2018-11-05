@@ -228,6 +228,12 @@ app.post('/changepassword', function(req, res) {
   res.redirect("/account")
 });
 
+//==========================CHANGE USERNAME===========================
+app.post('/changepassword', function(req, res) {
+  db.collection("users").update({"username":req.body.selectUser},{$set:{"username":req.body.username}})
+  res.redirect("/admin")
+});
+
 //=====================================================================
 //========================PEOPLE ROUTES================================
 //=====================================================================
