@@ -206,7 +206,7 @@ app.post('/removeuser', function(req, res) {
   console.log(JSON.stringify(req.body.selectUser))
   if(req.session.user != req.body.selectUser){
     db.collection("users").remove({"username": req.body.selectUser})
-    res.redirect('/filter');
+    res.redirect('/admin');
   }else{
     res.redirect('/admin');
   }
