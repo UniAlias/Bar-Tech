@@ -33,7 +33,9 @@ MongoClient.connect(url, function(err, db) {
     console.log("Keys collection created!");
     // db.close();
   });
-  db.createCollection("people")
+  db.createCollection("people", function(err, res) {
+    console.log("people collection created!");
+  });
 });
 
 //Inserting Data into the 'users' Collection
