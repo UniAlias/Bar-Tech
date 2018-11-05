@@ -205,7 +205,7 @@ app.post('/adduser', function(req, res) {
 app.post('/removeuser', function(req, res) {
   console.log(JSON.stringify(req.body))
   if(req.session.username != req.body.selectUser){
-    db.collection("people").remove({"username": req.body.selectUser})
+    db.collection("users").remove({"username": req.body.selectUser})
     res.redirect('/admin');
   }
   res.redirect('/admin');
