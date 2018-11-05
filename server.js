@@ -192,6 +192,7 @@ app.post('/adduser', function(req, res) {
     if (err) throw err;
     console.log(JSON.stringify(datastore));
     });
+    res.redirect("/admin");
 });
 
 
