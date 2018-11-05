@@ -297,8 +297,14 @@ app.post('/return', function(req, res) {
     db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
       console.log(result.storage);
       db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
-      db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "storage": result.storage, "lock": result.lock, "num": 1});
-      db.collection("keys").updateMany({"id": result.id}, {$set: {"num": 1}});
+      if (result.num == 0) {
+        db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "storage": result.storage, "lock": result.lock, "num": 1});
+        db.collection("keys").updateMany({"id": result.id}, {$set: {"num": 1}});
+      }
+      else if (result.num > 0) {
+        db.collection("keys").updateMany({"id": result.id}, {$set: {"num": (result.num + 1)}});
+      }
+
     });
     res.redirect("/filter");
 });
