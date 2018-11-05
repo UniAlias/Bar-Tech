@@ -214,7 +214,11 @@ app.post('/removeuser', function(req, res) {
 
 //==================================UPDATE RIGHTS========================
 app.post('/updaterights', function(req, res) {
-
+  if(req.session.user != req.body.selectUser){
+    db.collection("users").update({"username": req.body.selectUser},{$set: {"clearance": req.body.rights}})
+  }else{
+    res.redirect('/admin');
+  }
 });
 
 //============================CHANGE PASSWORD========================
