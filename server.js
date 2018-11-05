@@ -110,7 +110,8 @@ app.get('/filter', function(req, res) {
   // console.log(keys);
   res.render('pages/filter', {
     keys: result,
-    people: results
+    people: results,
+    req.session.clearance
   });
 });
 });
