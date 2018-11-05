@@ -24,12 +24,8 @@
       <form class = "filterForm">
         <input id = "filter_search" onkeyup="searchDatabase()" type="text" name="search" placeholder="Search..">
       </form>
-
-      <form class = "filterForm">
-
-      </form>
     </div>
-
+<% if(rights == 3 || rights == 2){ %>
     <button class="accordion" >Issue</button>
     <div class="panel">
       <form action= "/issue" class = "filterForm" method="POST">
@@ -133,7 +129,7 @@
     <% }); %>
   </tbody>
   </table>
-
+  <% } %>
 </content>
 
 </body>
