@@ -54,10 +54,10 @@
           <h5>Select a user to be removed</h5>
 
 
-          <select id = "select">
-            <option value="user">Mark</option>
-            <option value="user">John</option>
-            <option value="user">Bill</option>
+          <select name = "selectUser" id = "select">
+            <% users.forEach(function(peep) { %>
+              <option name = "name"><%= peep.name %></option>
+            <% }); %>
           </select>
 
           <div id = "check">

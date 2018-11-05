@@ -132,14 +132,14 @@ app.get('/account', function(req, res) {
 
 //admin page
 app.get('/admin', function(req, res) {
-  
+
   db.collection("users").find().toArray(function(err, result) {
     if (err) throw err;
     if (req.session.security == 3) {
       res.render('pages/admin',{users:result});
     }
 
-    if (req.session.security != 3) {
+    else if (req.session.security != 3) {
       console.log("You do not have access to this page");
       res.redirect('/filter');
     }
