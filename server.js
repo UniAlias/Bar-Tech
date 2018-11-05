@@ -203,12 +203,12 @@ app.post('/adduser', function(req, res) {
 
 //===================================REMOVE USER=======================
 app.post('/removeuser', function(req, res) {
-  console.log(JSON.stringify(req.body))
-  if(req.session.user != req.body.selectUser){
+  console.log(JSON.stringify(req.body.selectUser))
+  //if(req.session.user != req.body.selectUser){
     db.collection("users").remove({"username": req.body.selectUser})
     res.redirect('/admin');
-  }
-  res.redirect('/admin');
+  //}
+  //res.redirect('/admin');
 });
 
 //==================================UPDATE RIGHTS========================
