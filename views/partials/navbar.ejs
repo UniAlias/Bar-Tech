@@ -3,7 +3,9 @@
 <div class="topnav">
   <img src="../../images/logo_white_ma8l4a.png" id="navbarLogo"/>
   <a href="/logout">Logout</a>
-  <a href="/admin">Admin</a>
+  <% if(req.session.clearance == 3) %>
+    <a href="/admin">Admin</a>
+  <% }); %>
   <a href="/account">Account</a>
   <a href="/filter">Home</a>
 </div>
