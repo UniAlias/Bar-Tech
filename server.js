@@ -274,7 +274,7 @@ app.post('/issue', function(req, res) {
       db.collection("keys").findOne({"id": req.body.issuekey}, function(err, result) {
         if (err) throw err;
         if (result.num > 1) {
-        db.collection("keys").insert({"id": req.body.issuekey,"level": result.level, "allocated": req.body.peopleselect, "storage": result.storage, "lock": result.lock, "num": (result.num - 1)});
+        db.collection("keys").insert({"id": req.body.issuekey,"type": result.type, "allocated": req.body.peopleselect, "storage": result.Storage, "lock": result.lock, "num": (result.num - 1)});
         try {
           db.collection("keys").updateMany({"id": req.body.issuekey}, {$set: {"num": (result.num - 1)}});
         }
@@ -297,7 +297,7 @@ app.post('/return', function(req, res) {
     db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
       console.log(JSON.stringify(result.level));
       db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
-      db.collection("keys").insert({"id": req.body.keyreturn, "level": result.level, "allocated": "Available", "Storage": result.storage, "lock": result.lock, "num": 1});
+      db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "Storage": result.Storage, "lock": result.lock, "num": 1});
       db.collection("keys").updateMany({"id": result.id}, {$set: {"num": 1}});
     });
     res.redirect("/filter");
