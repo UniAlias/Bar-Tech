@@ -75,12 +75,12 @@
     <button class="accordion">Add</button>
     <div class="panel">
       <form action="/addkey" class = "filterForm" method="POST">
-        <input id = "add_id" type = "text" name = "id" placeholder = "Key ID">
-        <input id = "add_room" type = "text" name = "room" placeholder = "Lock Location">
-        <input id = "add_storage" type = "text" name = "storage" placeholder = "Storage Location">
-        <input id = "add_num" type = "number" name = "availableKeys" placeholder = "Number of Keys">
+        <input id = "add_id" type = "text" name = "id" placeholder = "Key ID" required>
+        <input id = "add_room" type = "text" name = "room" placeholder = "Lock Location" required>
+        <input id = "add_storage" type = "text" name = "storage" placeholder = "Storage Location" required>
+        <input id = "add_num" type = "number" name = "availableKeys" placeholder = "Number of Keys" required>
         <div class = "inline">
-          <input id = "add_type" type = "text" name = "type" placeholder = "Type">
+          <input id = "add_type" type = "text" name = "type" placeholder = "Type" required>
           <input type="submit" value="Add">
         </div>
       </form>
@@ -98,7 +98,7 @@
                 <% } %>
               <% }); %>
           </select>
-          <input id = "remove_copies" type ="number" name = "num" placeholder = "No. To Remove">
+          <input id = "remove_copies" type ="number" name = "num" placeholder = "No. To Remove" required>
           <input type="submit" value="Remove">
         </div>
       </form>
