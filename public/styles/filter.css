@@ -2,7 +2,7 @@
 
 #filterAccordion{
   width:600px;
-  height: 200px;
+  height: auto;
   box-shadow: 0px 5px 11px #bfbfbf;
 }
 .accordion {
