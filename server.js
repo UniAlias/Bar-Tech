@@ -186,7 +186,7 @@ app.post('/dologin', function(req, res) {
 app.post('/adduser', function(req, res) {
   var datastore = [{"username": req.body.name,
                    "password": req.body.psw,
-                   "clearance": req.body.select}];
+                   "clearance": req.body.select.value}];
 
   db.collection("users").insert(datastore, function(err, res) {
     if (err) throw err;
