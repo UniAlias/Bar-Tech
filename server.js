@@ -53,37 +53,37 @@ MongoClient.connect(url, function(err, db) {
 // });
 
 //Inserting data into the 'keys' collection
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var myObj = [
-    {id: 'k234', type: 'Master', allocated: 'John', storage: 'cabinet', lock: 'N533', num: 4},
-    {id: '452', type: 'normal', allocated: 'Available', storage: 'locker', lock: 'N527', num: 2},
-    {id: 'k666', type: 'super master', allocated: 'Available', storage: 'cabinet 2', lock: 'N420', num: 6},
-    {id: 'k75', type: 'sub master', allocated: 'Hagrid', storage: 'cabinet', lock: 'N529', num: 1},
-    {id: 'k212', type: 'normal', allocated: 'Mark', storage: 'cabinet 4', lock: 'N117', num: 3}
-  ];
-  db.collection("keys").insertMany(myObj, function(err, res) {
-    if (err) throw err;
-    console.log("Number of keys inserted: " + res.insertedCount);
-    // db.close();
-  });
-});
-
-
-//Inserting data into the 'people' collection
 // MongoClient.connect(url, function(err, db) {
 //   if (err) throw err;
 //   var myObj = [
-//     {name: 'John Isaacs'},
-//     {name: 'Mark Zarb'},
-//     {name: 'Roger McDermot'}
+//     {id: 'k234', type: 'Master', allocated: 'John', storage: 'cabinet', lock: 'N533', num: 4},
+//     {id: '452', type: 'normal', allocated: 'Available', storage: 'locker', lock: 'N527', num: 2},
+//     {id: 'k666', type: 'super master', allocated: 'Available', storage: 'cabinet 2', lock: 'N420', num: 6},
+//     {id: 'k75', type: 'sub master', allocated: 'Hagrid', storage: 'cabinet', lock: 'N529', num: 1},
+//     {id: 'k212', type: 'normal', allocated: 'Mark', storage: 'cabinet 4', lock: 'N117', num: 3}
 //   ];
-//   db.collection("people").insertMany(myObj, function(err, res) {
+//   db.collection("keys").insertMany(myObj, function(err, res) {
 //     if (err) throw err;
-//     console.log("Number of people inserted: " + res.insertedCount);
+//     console.log("Number of keys inserted: " + res.insertedCount);
 //     // db.close();
 //   });
 // });
+
+
+//Inserting data into the 'people' collection
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var myObj = [
+    {name: 'John Isaacs'},
+    {name: 'Mark Zarb'},
+    {name: 'Roger McDermot'}
+  ];
+  db.collection("people").insertMany(myObj, function(err, res) {
+    if (err) throw err;
+    console.log("Number of people inserted: " + res.insertedCount);
+    // db.close();
+  });
+});
 
 
 
