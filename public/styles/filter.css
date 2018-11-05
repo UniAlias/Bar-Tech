@@ -105,6 +105,7 @@ input[type=submit]:hover {
 
 #column{
   height: auto;
+  width:650px;
 }
 
 #scroll{
