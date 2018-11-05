@@ -216,6 +216,7 @@ app.post('/removeuser', function(req, res) {
 app.post('/updaterights', function(req, res) {
   if(req.session.user != req.body.selectUser){
     db.collection("users").update({"username": req.body.selectUser},{$set: {"clearance": req.body.rights}})
+    res.redirect('/admin');
   }else{
     res.redirect('/admin');
   }
