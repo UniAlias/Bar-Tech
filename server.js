@@ -229,7 +229,7 @@ app.post('/changepassword', function(req, res) {
 });
 
 //==========================CHANGE USERNAME===========================
-app.post('/changepassword', function(req, res) {
+app.post('/changeusername', function(req, res) {
   db.collection("users").update({"username":req.body.selectUser},{$set:{"username":req.body.username}})
   res.redirect("/admin")
 });
