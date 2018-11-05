@@ -56,11 +56,11 @@ MongoClient.connect(url, function(err, db) {
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var myObj = [
-    {id: 'k234', level: 'Master', allocated: 'John', storage: 'cabinet', lock: 'N533', num: 4},
-    {id: '452', level: 'normal', allocated: 'Available', storage: 'locker', lock: 'N527', num: 2},
-    {id: 'k666', level: 'super master', allocated: 'Available', storage: 'cabinet 2', lock: 'N420', num: 6},
-    {id: 'k75', level: 'sub master', allocated: 'Hagrid', storage: 'cabinet', lock: 'N529', num: 1},
-    {id: 'k212', level: 'normal', allocated: 'Mark', storage: 'cabinet 4', lock: 'N117', num: 3}
+    {id: 'k234', type: 'Master', allocated: 'John', storage: 'cabinet', lock: 'N533', num: 4},
+    {id: '452', type: 'normal', allocated: 'Available', storage: 'locker', lock: 'N527', num: 2},
+    {id: 'k666', type: 'super master', allocated: 'Available', storage: 'cabinet 2', lock: 'N420', num: 6},
+    {id: 'k75', type: 'sub master', allocated: 'Hagrid', storage: 'cabinet', lock: 'N529', num: 1},
+    {id: 'k212', type: 'normal', allocated: 'Mark', storage: 'cabinet 4', lock: 'N117', num: 3}
   ];
   db.collection("keys").insertMany(myObj, function(err, res) {
     if (err) throw err;
@@ -295,7 +295,7 @@ app.post('/issue', function(req, res) {
 app.post('/return', function(req, res) {
     console.log(JSON.stringify(req.body))
     db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
-      console.log(JSON.stringify(result.level));
+      console.log(JSON.stringify(result.Storage));
       db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
       db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "Storage": result.Storage, "lock": result.lock, "num": 1});
       db.collection("keys").updateMany({"id": result.id}, {$set: {"num": 1}});
