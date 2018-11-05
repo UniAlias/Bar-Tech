@@ -2,6 +2,7 @@
 
 #filterAccordion{
   width:600px;
+  height: auto;
   box-shadow: 0px 5px 11px #bfbfbf;
 }
 .accordion {
@@ -105,6 +106,7 @@ input[type=submit]:hover {
 #keyDatabase{
   width:100%;
   height: 800px;
+  overflow-y: scroll;
   box-shadow: 0px 5px 11px  #bfbfbf;
   margin-left:20px;
   font-family: sans-serif;
