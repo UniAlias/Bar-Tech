@@ -55,8 +55,8 @@
 
 
           <select name = "selectUser" id = "select">
-            <% users.forEach(function(peep) { %>
-              <option name = "name"><%= peep.name %></option>
+            <% users.forEach(function(user) { %>
+              <option name = "name"><%= user.username %></option>
             <% }); %>
           </select>
 
