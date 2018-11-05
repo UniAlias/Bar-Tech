@@ -136,8 +136,9 @@ app.get('/admin', function(req, res) {
     db.collection("users").find().toArray(function(err, result) {
       if (err) throw err;
       res.render('pages/admin',{users:result});
-  }}
-  else if (req.session.security != 3) {
+  }};
+
+  if (req.session.security != 3) {
     console.log("You do not have access to this page");
     res.redirect('/filter');
   }
