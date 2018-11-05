@@ -224,7 +224,8 @@ app.post('/updaterights', function(req, res) {
 
 //============================CHANGE PASSWORD========================
 app.post('/changepassword', function(req, res) {
-
+  db.collection("users").update({"username":req.session.user},{$set:{"password":req.body.password}})
+  res.redirect("/account")
 });
 
 //=====================================================================
