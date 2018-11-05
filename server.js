@@ -141,7 +141,7 @@ app.get('/admin', function(req, res) {
   if (req.session.security != 3) {
     console.log("You do not have access to this page");
     res.redirect('/filter');
-  }
+  });
 });
 
 //login page
