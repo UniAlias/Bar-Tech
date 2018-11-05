@@ -32,15 +32,15 @@
           <h3>Add User</h3>
           <h5>Complete the form to add a user</h5>
 
-          <input id = "add_username" type = "text" name = "name" placeholder = "Username">
+          <input id = "add_username" type = "text" name = "name" placeholder = "Username" required>
 
-          <input id = "add_password" type = "password" name = "psw" placeholder = "Password">
+          <input id = "add_password" type = "password" name = "psw" placeholder = "Password" required>
 
-          <input id = "add_conPassword" type = "password" name = "psw_con" placeholder = "Confirm Password">
+          <input id = "add_conPassword" type = "password" name = "psw_con" placeholder = "Confirm Password" required>
 
           <h5>Select the access rights for the user:</h5>
 
-          <select id = "select" name = "rights">
+          <select id = "select" name = "rights" required>
             <option value="1">View Only</option>
             <option value="2">Normal Access</option>
             <option value="3">Admin Access</option>
@@ -56,7 +56,7 @@
           <h5>Select a user to be removed</h5>
 
 
-          <select name = "selectUser" id = "select">
+          <select name = "selectUser" id = "select" required>
             <% users.forEach(function(user) { %>
               <option><%= user.username %></option>
             <% }); %>
@@ -64,7 +64,7 @@
 
           <div id = "check">
             <label for = "remove_confirm">I confirm that I wish permanently remove this user and their access to this system.</label>
-            <input id = "remove_confirm" type = "checkbox" value = "confirm">
+            <input id = "remove_confirm" type = "checkbox" value = "confirm" required>
           </div>
 
           <input type="submit" value="Remove User">
@@ -76,7 +76,7 @@
           <h3>Update User Rights</h3>
           <h5>Select a user to update their access privileges</h5>
 
-          <select id = "select" name = "selectUser">
+          <select id = "select" name = "selectUser" required>
             <% users.forEach(function(user) { %>
               <option><%= user.username %></option>
             <% }); %>
@@ -86,7 +86,7 @@
 
           <h5>Select new access privileges:</h5>
 
-          <select id = "select" name = "rights">
+          <select id = "select" name = "rights" required>
             <option value="1">View Only</option>
             <option value="2">Normal Access</option>
             <option value="3">Admin Access</option>
@@ -96,7 +96,7 @@
 
           <div id = "check">
             <label for = "remove_confirm">I confirm that I wish to update the selected users access rights.</label>
-            <input id = "remove_confirm" type = "checkbox" value = "confirm">
+            <input id = "remove_confirm" type = "checkbox" value = "confirm" required>
           </div>
 
           <input type="submit" value="Update">
@@ -109,17 +109,17 @@
           <h3>Change Username</h3>
           <h5>Select a user to change their username</h5>
 
-          <select id = "select" name = "selectUser">
+          <select id = "select" name = "selectUser" required>
             <% users.forEach(function(user) { %>
               <option><%= user.username %></option>
             <% }); %>
           </select>
 
           <h5>New Username:</h5>
-          <input type="text" name="username" placeholder="Username">
+          <input type="text" name="username" placeholder="Username" required>
 
           <h5>Confirm Username:</h5>
-          <input type="text" name="confirmedUsername" placeholder="Username">
+          <input type="text" name="confirmedUsername" placeholder="Username" required>
           <input type="submit" value="Change Username">
         </form>
       </div>
@@ -130,7 +130,7 @@
           <h3>Add Person</h3>
           <h5>Add a member of staff, to which you can issue keys</h5>
 
-          <input type = "text" name="newName" placeholder="Name">
+          <input type = "text" name="newName" placeholder="Name" required>
           <input type="submit" value="Add Person" >
         </form>
       </div>
