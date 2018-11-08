@@ -71,19 +71,19 @@ MongoClient.connect(url, function(err, db) {
 
 
 //Inserting data into the 'people' collection
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var myObj = [
-    {name: 'John Isaacs'},
-    {name: 'Mark Zarb'},
-    {name: 'Roger McDermot'}
-  ];
-  db.collection("people").insertMany(myObj, function(err, res) {
-    if (err) throw err;
-    console.log("Number of people inserted: " + res.insertedCount);
-    // db.close();
-  });
-});
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var myObj = [
+//     {name: 'John Isaacs'},
+//     {name: 'Mark Zarb'},
+//     {name: 'Roger McDermot'}
+//   ];
+//   db.collection("people").insertMany(myObj, function(err, res) {
+//     if (err) throw err;
+//     console.log("Number of people inserted: " + res.insertedCount);
+//     // db.close();
+//   });
+// });
 
 
 
