@@ -320,7 +320,7 @@ app.post('/return', function(req, res) {
 
     });
     res.redirect("/filter");
-  };
+  }
   else {
     res.redirect("/filter");
   }
