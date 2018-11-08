@@ -137,15 +137,18 @@ app.get('/account', function(req, res) {
 app.get('/admin', function(req, res) {
 
   db.collection("users").find().toArray(function(err, result) {
+    db.collection("people").find().toArray(function(err, results) {
     if (err) throw err;
+
     if (req.session.security == 3) {
-      res.render('pages/admin',{users:result});
+      res.render('pages/admin',{users:result,people:results});
     }
 
     else if (req.session.security != 3) {
       console.log("You do not have access to this page");
       res.redirect('/filter');
     }
+  });
   });
 });
 
@@ -249,10 +252,19 @@ app.post('/changeusername', function(req, res) {
 //=====================================================================
 //========================PEOPLE ROUTES================================
 //=====================================================================
+
+//add person
 app.post('/addperson', function(req, res) {
   // console.log(JSON.stringify(req.body))
   db.collection("people").insert({"name": req.body.newName});
   res.redirect("/admin");
+});
+
+//remove person
+app.post('/removeperson', function(req, res) {
+  // console.log(JSON.stringify(req.body))
+  db.collection("people").remove({"name": req.body.personselect})
+  res.redirect('/admin');
 });
 
 

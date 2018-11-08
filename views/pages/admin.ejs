@@ -128,12 +128,34 @@
         <form class="adminForm" action="/addperson" method="POST">
 
           <h3>Add Person</h3>
-          <h5>Add a member of staff, to which you can issue keys</h5>
+          <h5>Add a member of staff to which you can issue keys</h5>
 
           <input type = "text" name="newName" placeholder="Name" required>
           <input type="submit" value="Add Person" >
         </form>
       </div>
+
+      <div id="Removeperson" class="tabcontent">
+        <form class="adminForm" action="/removeperson" method="POST">
+
+          <h3>Remove Person</h3>
+          <h5>Remove a member of staff to which you can issue keys</h5>
+
+          <select id = "select" name = "personselect" required>
+            <% people.forEach(function(user) { %>
+              <option><%= user.name %></option>
+            <% }); %>
+          </select>
+
+          <div id = "check">
+            <label for = "remove_confirm">I confirm that I wish to remove the selected record</label>
+            <input id = "remove_confirm" type = "checkbox" value = "confirm" required>
+          </div>
+
+          <input type="submit" value="Remove Person" >
+        </form>
+      </div>
+
       </div>
 
       <script>document.getElementById("defaultOpen").click();</script>
