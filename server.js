@@ -308,7 +308,6 @@ app.post('/return', function(req, res) {
     console.log(JSON.stringify(req.body))
     if (db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}) != null) {
     db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
-      console.log(result.storage);
       db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
       if (result.num == 0) {
         db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "storage": result.storage, "lock": result.lock, "num": 1});
