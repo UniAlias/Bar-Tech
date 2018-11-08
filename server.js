@@ -306,7 +306,7 @@ app.post('/issue', function(req, res) {
 //==========================RETURN KEY===============================
 app.post('/return', function(req, res) {
     console.log(JSON.stringify(req.body))
-    if ((db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}) != null) {
+    if (db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}) != null) {
     db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
       console.log(result.storage);
       db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
@@ -320,7 +320,7 @@ app.post('/return', function(req, res) {
 
     });
     res.redirect("/filter");
-  });
+  };
   else {
     res.redirect("/filter");
   }
