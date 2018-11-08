@@ -51,8 +51,10 @@ function searchDatabase() {
         var firstCol = rows[i].cells[0].textContent.toUpperCase();
         var secondCol = rows[i].cells[1].textContent.toUpperCase();
         var thirdCol = rows[i].cells[2].textContent.toUpperCase();
+        var forthCol = rows[i].cells[3].textContent.toUpperCase();
+        var fifthCol = rows[i].cells[3].textContent.toUpperCase();
 
-        if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1 || thirdCol.indexOf(filter) > -1) {
+        if (firstCol.indexOf(filter) > -1 || secondCol.indexOf(filter) > -1 || thirdCol.indexOf(filter) > -1 || forthCol.indexOf(filter) > -1 || fifthCol.indexOf(filter) > -1) {
             rows[i].style.display = "";
         } else {
             rows[i].style.display = "none";
