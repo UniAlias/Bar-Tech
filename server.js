@@ -307,6 +307,7 @@ app.post('/issue', function(req, res) {
 app.post('/return', function(req, res) {
     console.log(JSON.stringify(req.body))
     if (db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}  )) {
+      console.log(JSON.stringify("You got past the if statement! OOPS"))
     db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
       db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
       if (result.num == 0) {
