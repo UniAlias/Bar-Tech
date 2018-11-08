@@ -306,24 +306,27 @@ app.post('/issue', function(req, res) {
 //==========================RETURN KEY===============================
 app.post('/return', function(req, res) {
     console.log(JSON.stringify(req.body))
-    if (db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}  )) {
-      console.log(JSON.stringify("You got past the if statement! OOPS"))
-    db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
-      db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
-      if (result.num == 0) {
-        db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "storage": result.storage, "lock": result.lock, "num": 1});
-        db.collection("keys").updateMany({"id": result.id}, {$set: {"num": 1}});
-      }
-      else if (result.num > 0) {
-        db.collection("keys").updateMany({"id": result.id}, {$set: {"num": (result.num + 1)}});
-      }
 
-    });
-    res.redirect("/filter");
-  }
-  else {
-    res.redirect("/filter");
-  }
+    // var query = db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}  );
+    // console.log(JSON.stringify(query));
+
+    db.collection("keys").findOne({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]}, function(err, result) {
+      if(result != null){
+      db.collection("keys").remove({$and: [{"id": req.body.keyreturn}, {"allocated": req.body.peopleselect}]});
+
+        if (result.num == 0) {
+          db.collection("keys").insert({"id": req.body.keyreturn, "type": result.type, "allocated": "Available", "storage": result.storage, "lock": result.lock, "num": 1});
+          db.collection("keys").updateMany({"id": result.id}, {$set: {"num": 1}});
+        }
+        else if (result.num > 0) {
+          db.collection("keys").updateMany({"id": result.id}, {$set: {"num": (result.num + 1)}});
+        }
+      res.redirect("/filter");
+    }
+    else {
+      res.redirect("/filter");
+    }
+  });
 });
 
 //==========================ADD KEY==================================
